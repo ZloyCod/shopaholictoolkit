@@ -1,0 +1,39 @@
+<div class="init-section">
+    <div class="success status" style="display: none; margin-bottom: 1rem; color: green;">
+        Начинаю установку новых цен...
+    </div>
+
+    <div class="failed status" style="display: none; margin-bottom: 1rem; color: red;">
+        Во время выполнения скрипта произошла ошибка
+    </div>
+
+    <button
+        type="button"
+        class="btn btn-primary oc-icon-play"
+        onclick="increasePrices(this)"
+        data-request-confirm="Вы уверены что хотите запустить скрипт?">
+        Запустить
+    </button>
+</div>
+
+<script>
+    function increasePrices(button) {
+        let success = $(button).parents('.init-section').find('.success'),
+            failed  = $(button).parents('.init-section').find('.failed'),
+            status  = $(button).parents('.init-section').find('.status');
+
+        success.html('Начинаю установку новых цен...').show();
+
+        $.ajax({
+            url: '/backend/catdesign/shopaholic-tools/increase-price/',
+            success: function (response) {
+                status.hide();
+                success.html(response).show();
+            },
+            error: function (response) {
+                status.hide();
+                failed.html(response).show();
+            }
+        });
+    }
+</script>

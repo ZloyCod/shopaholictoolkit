@@ -1,0 +1,94 @@
+
+fields:
+    include_category:
+        label: 'Укажите категорию для работы'
+        type: number
+        span: left
+        required: 1
+        comment: 'Скрипт будет искать предложения товаров в указанной категории. Указать ID'
+tabs:
+    fields:
+        reduce_price_section:
+            label: 'catdesign.shopaholictoolkit::lang.fields.reduce_price_section.label'
+            type: section
+            comment: 'catdesign.shopaholictoolkit::lang.fields.reduce_price_section.comment'
+            tab: 'catdesign.shopaholictoolkit::lang.tabs.reduce_price'
+        reduce_price_percent:
+            label: 'catdesign.shopaholictoolkit::lang.fields.reduce_price_percent.label'
+            type: number
+            span: left
+            tab: 'catdesign.shopaholictoolkit::lang.tabs.reduce_price'
+        reduce_price_button:
+            type: partial
+            path: $/catdesign/shopaholictoolkit/views/_reduce_price_button.htm
+            span: full
+            tab: 'catdesign.shopaholictoolkit::lang.tabs.reduce_price'
+
+        increase_price_section:
+            label: 'catdesign.shopaholictoolkit::lang.fields.increase_price_section.label'
+            type: section
+            comment: 'catdesign.shopaholictoolkit::lang.fields.increase_price_section.comment'
+            tab: 'catdesign.shopaholictoolkit::lang.tabs.increase_price'
+        increase_price_percent:
+            label: 'catdesign.shopaholictoolkit::lang.fields.increase_price_percent.label'
+            type: number
+            span: left
+            tab: 'catdesign.shopaholictoolkit::lang.tabs.increase_price'
+        increase_price_button:
+            type: partial
+            path: $/catdesign/shopaholictoolkit/views/_increase_price_button.htm
+            span: full
+            tab: 'catdesign.shopaholictoolkit::lang.tabs.increase_price'
+
+        create_offer_section:
+            label: 'catdesign.shopaholictoolkit::lang.fields.create_offer_section.label'
+            type: section
+            comment: 'catdesign.shopaholictoolkit::lang.fields.create_offer_section.comment'
+            tab: 'catdesign.shopaholictoolkit::lang.tabs.create_offer'
+        create_offer_button:
+            type: partial
+            path: $/catdesign/shopaholictoolkit/views/_create_offer_list_button.htm
+            span: full
+            tab: 'catdesign.shopaholictoolkit::lang.tabs.create_offer'
+        create_offer_list:
+            label: 'catdesign.shopaholictoolkit::lang.fields.create_offer_list.label'
+            type: repeater
+            span: left
+            form:
+                fields:
+                    image:
+                        label: 'catdesign.shopaholictoolkit::lang.fields.create_offer_list.image.label'
+                        type: mediafinder
+                        mode: image
+                    name:
+                        label: 'catdesign.shopaholictoolkit::lang.fields.create_offer_list.name.label'
+                        type: text
+                        span: left
+                    code:
+                        label: 'catdesign.shopaholictoolkit::lang.fields.create_offer_list.code.label'
+                        type: text
+                        span: right
+                    get_product_code:
+                        label: 'catdesign.shopaholictoolkit::lang.fields.create_offer_list.get_product_code.label'
+                        type: switch
+                        default: false
+                    price:
+                        label: 'catdesign.shopaholictoolkit::lang.fields.create_offer_list.price.label'
+                        type: number
+                        span: left
+                    old_price:
+                        label: 'catdesign.shopaholictoolkit::lang.fields.create_offer_list.old_price.label'
+                        type: number
+                        span: right
+            tab: 'catdesign.shopaholictoolkit::lang.tabs.create_offer'
+
+        remove_offer_section:
+            label: 'catdesign.shopaholictoolkit::lang.fields.remove_offer_section.label'
+            type: section
+            comment: 'catdesign.shopaholictoolkit::lang.fields.remove_offer_section.comment'
+            tab: 'catdesign.shopaholictoolkit::lang.tabs.remove_offer'
+        remove_offer_button:
+            type: partial
+            path: $/catdesign/shopaholictoolkit/views/_remove_offer_list_button.htm
+            span: full
+            tab: 'catdesign.shopaholictoolkit::lang.tabs.remove_offer'
